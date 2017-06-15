@@ -1,0 +1,46 @@
+@model BikeShop.Models.Entities.Bike
+@{
+    ViewData["Title"] = @Model.Name;
+}
+<body>
+            @Html.ValidationSummary()
+    
+        <form asp-controller="Bike"  asp-action="Delete" method="POST">
+        <input class="form-control" type="Hidden" asp-for="BikeId">
+        
+        <div class="row col-md-6">
+
+        <div class="form-group">
+         <div><label asp-for="Name"></label>
+         <p class="form-control-static">@Model.Name</p></div>
+        </div>
+
+        <div class="form-group">
+         <div><label asp-for="Manufacturer"></label>
+         <p class="form-control-static">@Model.Manufacturer</p></div>
+        </div>
+
+        <div class="form-group">
+         <div><label asp-for="Type"></label>
+         <p class="form-control-static">@Model.Type</p></div>
+        </div>
+
+        <div class="form-group">  
+         <div><label asp-for="Price"></label>
+         <p class="form-control-static">@Model.Price</p></div>
+        </div>
+
+
+        <div class="form-group">
+            <div>
+              <button type="submit" class="btn btn-danger">Delete</button>
+              <a class="btn btn-info" asp-controller="Bike" asp-action="Index">Back to list</a>
+              </div>
+            </div>
+            </div>
+        
+        <div class="row col-md-6">
+            <img src="@Model.Picture" alt="Bike Pic" height="400" width="600">
+        </div>
+      </form>
+    </body>

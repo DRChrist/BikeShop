@@ -1,0 +1,44 @@
+@model BikeShop.Models.Entities.Bike
+
+@{
+    ViewData["Title"] = @Model.Name;
+}     
+         <div class="container">
+
+        <input class="form-control" type="Hidden" asp-for="BikeId">
+
+        <h2>@Model.Name</h2>
+  
+        <div class="row col-md-6">
+   
+        <div class="form-control-static">
+            <label asp.for="Manufacturer">Manufacturer:&nbsp</label> 
+            @Model.Manufacturer</div>
+    
+        <div class="form-control-static">
+            <label asp.for="Type">Type:&nbsp</label> 
+            @Model.Type</div>
+    
+        <div class="form-control-static">
+            <label asp.for="Gender">Gender:&nbsp</label>
+            @Model.Gender</div>
+ 
+        <div class="form-control-static">
+            <label asp.for="Gears">Gears:&nbsp</label>
+            @Model.Gears</div>
+
+        <div class="form-control-static h2"> @Model.Price kr.</div>
+    </div> 
+             <div class="col-md-6">    
+              
+                <div class="picture">
+                <img src="@Model.Picture" alt="Bike Pic" height="400" width="600">                   
+                </div>
+             </div>
+    
+</div>
+
+      <div class="form-group">
+          <a class="btn btn-primary" asp-controller="Bike" asp-action="AddToCart" asp-route-id=@Model.BikeId >Add To Cart</a>
+          <a class="btn btn-info" asp-controller="Bike" asp-action="Index">Back</a>
+          </div>

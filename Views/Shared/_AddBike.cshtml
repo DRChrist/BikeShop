@@ -1,0 +1,10 @@
+@using Microsoft.AspNetCore.Identity
+@using BikeShop.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <a class="btn btn-info" asp-controller="Bike" asp-action="Create">Add New Bike</a>
+}
